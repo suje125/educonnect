@@ -3,9 +3,10 @@ services:
     name: educonnect
     env: node
     buildCommand: |
+      rm -rf node_modules
+      rm -rf .next
       npm install
       npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
-      npx tailwindcss init -p
       npm run build
     startCommand: npm start
     envVars:
